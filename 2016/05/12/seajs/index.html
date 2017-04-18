@@ -84,16 +84,25 @@
 
 
 
-<meta name="description" content="Fiddler">
+<meta name="description" content="seajs模块化代码 1：命名冲突  2：代码依赖（代码需要库/框架之类） 封装性（外部无法更改）
+一次编写，多次使用
+起始为解决此问题 命名空间法 划分私有空间,扩展维护模块。
+  calculator=(function()&amp;#123;12345678910111213141516171819   var add=function(v1,v2)&amp;#123;    return v1+v2;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Fiddler">
-<meta property="og:url" content="http://yoursite.com/2017/01/13/Fiddler/index.html">
+<meta property="og:title" content="seajs">
+<meta property="og:url" content="http://yoursite.com/2016/05/12/seajs/index.html">
 <meta property="og:site_name" content="Blog">
-<meta property="og:description" content="Fiddler">
-<meta property="og:updated_time" content="2017-04-18T04:11:49.547Z">
+<meta property="og:description" content="seajs模块化代码 1：命名冲突  2：代码依赖（代码需要库/框架之类） 封装性（外部无法更改）
+一次编写，多次使用
+起始为解决此问题 命名空间法 划分私有空间,扩展维护模块。
+  calculator=(function()&amp;#123;12345678910111213141516171819   var add=function(v1,v2)&amp;#123;    return v1+v2;">
+<meta property="og:updated_time" content="2017-04-18T05:54:33.541Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Fiddler">
-<meta name="twitter:description" content="Fiddler">
+<meta name="twitter:title" content="seajs">
+<meta name="twitter:description" content="seajs模块化代码 1：命名冲突  2：代码依赖（代码需要库/框架之类） 封装性（外部无法更改）
+一次编写，多次使用
+起始为解决此问题 命名空间法 划分私有空间,扩展维护模块。
+  calculator=(function()&amp;#123;12345678910111213141516171819   var add=function(v1,v2)&amp;#123;    return v1+v2;">
 
 
 
@@ -121,13 +130,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/01/13/Fiddler/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/05/12/seajs/"/>
 
 
 
 
 
-  <title> Fiddler | Blog </title>
+  <title> seajs | Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="">
@@ -240,7 +249,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/01/13/Fiddler/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/05/12/seajs/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="Micheal zhu">
@@ -264,7 +273,7 @@
             
             
               
-                Fiddler
+                seajs
               
             
           </h1>
@@ -279,8 +288,8 @@
               
                 <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-13T18:19:41+08:00">
-                2017-01-13
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-05-12T11:24:20+08:00">
+                2016-05-12
               </time>
             
 
@@ -315,7 +324,21 @@
       
 
       
-        <h3 id="Fiddler"><a href="#Fiddler" class="headerlink" title="Fiddler"></a>Fiddler</h3>
+        <h3 id="seajs"><a href="#seajs" class="headerlink" title="seajs"></a>seajs</h3><pre><code>模块化代码 1：命名冲突  2：代码依赖（代码需要库/框架之类） 封装性（外部无法更改）
+一次编写，多次使用
+起始为解决此问题 命名空间法 划分私有空间,扩展维护模块。
+  <figure class="highlight plain"><figcaption><span>calculator=(function()&#123;</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">   var add=function(v1,v2)&#123;</div><div class="line">    return v1+v2;</div><div class="line">   &#125;</div><div class="line">   var substract=function(v1,v2)&#123;</div><div class="line">        return v1-v2;</div><div class="line">   &#125;</div><div class="line">    var mutiply=function(v1,v2)&#123;</div><div class="line">        return v1*v2;</div><div class="line">   &#125;</div><div class="line">   var divide=function(v1,v2)&#123;</div><div class="line">     return v1/v2;</div><div class="line">   &#125;</div><div class="line">   return &#123;</div><div class="line">        add:add,</div><div class="line">        substract:substract,</div><div class="line">        mutiply:mutiply,</div><div class="line">        divide:divide</div><div class="line">   &#125;</div><div class="line">&#125;)()</div></pre></td></tr></table></figure>
+
+//进行开闭原则 对直接修改关闭、扩展开放   
+ <figure class="highlight plain"><figcaption><span>calculator=(function(cal)&#123;</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">   cal.mod=function(v1,v2)&#123;</div><div class="line">     return v1%v2;</div><div class="line">   &#125;</div><div class="line">   return cal;</div><div class="line">&#125;)(window.calculator||&#123;&#125;)</div></pre></td></tr></table></figure>
+
+
+//代码依赖 很牵强
+<figure class="highlight plain"><figcaption><span>calculator=(function(cal,$)&#123;</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">  cal.add2=function()&#123;</div><div class="line">      var v1=$(&apos;#v1&apos;).val();</div><div class="line">      var v2= $(&apos;#v2&apos;).val();</div><div class="line"> </div><div class="line">     return (v1-0)+(v2-0);</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  return cal;</div><div class="line"></div><div class="line">&#125;)(window.calculator||&#123;&#125;,window.$)</div></pre></td></tr></table></figure>
+
+基于CMD规范
+</code></pre><p>  // 所有模块都通过 define 来定义<br>    <figure class="highlight plain"><figcaption><span>exports, module) &#123;</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">  // 通过 require 引入依赖</div><div class="line">  var $ = require(&apos;jquery&apos;);</div><div class="line">  var Spinning = require(&apos;./spinning&apos;);</div><div class="line"></div><div class="line">  // 通过 exports 对外提供接口</div><div class="line">  exports.doSomething = ...</div><div class="line"></div><div class="line">  // 或者通过 module.exports 提供整个接口</div><div class="line">  module.exports = ...</div><div class="line"></div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+
       
     </div>
 
@@ -341,18 +364,14 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/01/06/flex/" rel="next" title="flex">
-                <i class="fa fa-chevron-left"></i> flex
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/02/18/vue/" rel="prev" title="vue">
-                vue <i class="fa fa-chevron-right"></i>
+              <a href="/2016/09/07/nodejs/" rel="prev" title="node js">
+                node js <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -462,7 +481,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Fiddler"><span class="nav-number">1.</span> <span class="nav-text">Fiddler</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#seajs"><span class="nav-number">1.</span> <span class="nav-text">seajs</span></a></li></ol></div>
             
 
           </div>

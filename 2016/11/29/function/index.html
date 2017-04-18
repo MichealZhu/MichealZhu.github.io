@@ -90,7 +90,7 @@
 <meta property="og:url" content="http://yoursite.com/2016/11/29/function/index.html">
 <meta property="og:site_name" content="Blog">
 <meta property="og:description" content="Generate static files闭包的简单理解闭包就对闭包的理解来说始于和函数内部的值外部无法直接获取 （单纯的获取方式：函数不调用不执行 1 调用 2 调用产生值 return将其送出）而函数内部可以获取  上下作用域  所以return 可以获取值那么需要将值进行修改呢 可以用函数 所以return （出函数 函数里操作将值进行修改 将值return）所以闭包的基本形式：一个外部函数">
-<meta property="og:updated_time" content="2017-01-22T11:55:07.100Z">
+<meta property="og:updated_time" content="2017-04-18T05:54:59.818Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="闭包">
 <meta name="twitter:description" content="Generate static files闭包的简单理解闭包就对闭包的理解来说始于和函数内部的值外部无法直接获取 （单纯的获取方式：函数不调用不执行 1 调用 2 调用产生值 return将其送出）而函数内部可以获取  上下作用域  所以return 可以获取值那么需要将值进行修改呢 可以用函数 所以return （出函数 函数里操作将值进行修改 将值return）所以闭包的基本形式：一个外部函数">
@@ -315,9 +315,12 @@
       
 
       
-        <h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><h1 id="闭包的简单理解"><a href="#闭包的简单理解" class="headerlink" title="闭包的简单理解"></a>闭包的简单理解</h1><h2 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h2><p>就对闭包的理解来说始于和函数内部的值外部无法直接获取 （单纯的获取方式：函数不调用不执行 1 调用 2 调用产生值 return将其送出）而函数内部可以获取  上下作用域  所以return 可以获取值<br>那么需要将值进行修改呢 可以用函数 所以return （出函数 函数里操作将值进行修改 将值return）<br>所以闭包的基本形式：一个外部函数和一个内部函数（return一个内部函数） 通过内部函数来访问更改外部函数的值<br>function test(){<br>var a= 1;<br>return function(){<br>return a=a+1;<br>}<br>}<br>闭包的作用：给以一个安全的环境封闭的空间 能够让闭包中的值不会轻易改变（在全局中随意可以更改）和污染全局  需要通过给以的特定的方法获取或改变   （作用域的关系）</p>
+        <h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><h1 id="闭包的简单理解"><a href="#闭包的简单理解" class="headerlink" title="闭包的简单理解"></a>闭包的简单理解</h1><h2 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h2><p>就对闭包的理解来说始于和函数内部的值外部无法直接获取 （单纯的获取方式：函数不调用不执行 1 调用 2 调用产生值 return将其送出）而函数内部可以获取  上下作用域  所以return 可以获取值<br>那么需要将值进行修改呢 可以用函数 所以return （出函数 函数里操作将值进行修改 将值return）<br>所以闭包的基本形式：一个外部函数和一个内部函数（return一个内部函数） 通过内部函数来访问更改外部函数的值<br>function test(){<br>var a= 1;<br>return function(){<br>return a=a+1;<br>}<br>}<br>闭包的作用：<br>1.给以一个安全的环境封闭的空间 能够让闭包中的值不会轻易改变（在全局中随意可以更改）和污染全局  需要通过给以的特定的方法获取或改变   （作用域的关系）</p>
 <p>eg  function test(){<br>          var name=’zjl’;<br>}<br>     test（）；此刻值已存在 只不过外部无法获取</p>
-<p>如进行闭包的使用  则可以进行值的获取和更改  （想要更改我的数据必须通过我的方法 也可在此之中进行逻辑的校验）<br>          function test （）{<br>               var name =’zjl’;<br>               return {<br>               getname: function(){<br>                    return  name;(name在外部函数中获取)，<br>               setname:function(a){<br>                    if(a==’zjl’){<br>                    throw{<br>                         ‘it is a mistake’<br>}<br>               }<br>                    return name=a;<br>               }<br>               }<br>               }<br>               }</p>
+<p>如进行闭包的使用  则可以进行值的获取和更改  （想要更改我的数据必须通过我的方法 也可在此之中进行逻辑的校验）<br>              <figure class="highlight plain"><figcaption><span>test （）&#123;</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">               var name =&apos;zjl&apos;;</div><div class="line">               return &#123;</div><div class="line">               getname: function()&#123;</div><div class="line">                    return  name;(name在外部函数中获取)，</div><div class="line">               setname:function(a)&#123;</div><div class="line">                    if(a==&apos;zjl&apos;)&#123;</div><div class="line">                    throw&#123;</div><div class="line">                         &apos;it is a mistake&apos;</div><div class="line">&#125;</div><div class="line">               &#125;</div><div class="line">                    return name=a;</div><div class="line">               &#125;</div><div class="line">               &#125;</div><div class="line">               &#125;</div><div class="line">               &#125;</div></pre></td></tr></table></figure></p>
+<p>2让数据永久存于内存之中<br>    <figure class="highlight plain"><figcaption><span>f1()&#123;</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">     　　　　var n=999;</div><div class="line"></div><div class="line">     　　　　nAdd=function()&#123;n+=1&#125;</div><div class="line"></div><div class="line">     　　　　function f2()&#123;</div><div class="line">     　　　　　　alert(n);</div><div class="line">     　　　　&#125;</div><div class="line"></div><div class="line">     　　　　return f2;</div><div class="line"></div><div class="line">     　　&#125;</div><div class="line"></div><div class="line">     　　var result=f1();</div><div class="line"></div><div class="line">     　　result(); // 999</div><div class="line"></div><div class="line">     　　nAdd();</div><div class="line"></div><div class="line">     　　result(); // 1000</div></pre></td></tr></table></figure></p>
+<p>在这段代码中，result实际上就是闭包f2函数。它一共运行了两次，第一次的值是999，第二次的值是1000。这证明了，函数f1中的局部变量n一直保存在内存中，并没有在f1调用后被自动清除。</p>
+<p>为什么会这样呢？原因就在于f1是f2的父函数，而f2被赋给了一个全局变量，这导致f2始终在内存中，而f2的存在依赖于f1，因此f1也始终在内存中，不会在调用结束后，被垃圾回收机制（garbage collection）回收。</p>
 
       
     </div>
@@ -426,7 +429,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">Artikel</span>
               </a>
             </div>
